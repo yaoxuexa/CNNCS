@@ -10,11 +10,10 @@ Cell detection/localization from microscopy images is a significant task in medi
 
 Download the <a href="http://amida13.isi.uu.nl/">AMIDA-13</a> dataset.
 
-Download the sparsity-regularized minimization solver MATLAB toolbox: <a href="http://ttic.uchicago.edu/~ryotat/softwares/dal/">DAL</a>
+Download the sparsity-regularized minimization solver MATLAB toolbox: <a href="http://ttic.uchicago.edu/~ryotat/softwares/dal/">DAL</a>.
 
-Install Mxnet https://github.com/apache/incubator-mxnet
-
-Install Mxnet and required dependencies like cuDNN. See the instructions here for a step-by-step guide.
+Install the deep learning library: <a href="https://github.com/apache/incubator-mxnet">Mxnet</a>.
+See the instructions <a href="https://mxnet.incubator.apache.org/get_started/ubuntu_setup.html">here</a> for a step-by-step guide for installation on Ubuntu.
 
 # Usage:
 
