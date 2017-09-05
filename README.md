@@ -8,7 +8,7 @@ Cell detection/localization from microscopy images is a significant task in medi
 
 # Setup
 
-Download the AMIDA-13 datasets http://amida13.isi.uu.nl/
+Download the <a href="http://amida13.isi.uu.nl/">AMIDA-13</a> dataset.
 Download the DAL http://ttic.uchicago.edu/~ryotat/softwares/dal/
 Install Mxnet https://github.com/apache/incubator-mxnet
 
