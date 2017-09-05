@@ -3,4 +3,4 @@ This repository contains the code for CNNCS introduced in the paper <a href="htt
 
 # Introduction
 
-<img src="https://user-images.githubusercontent.com/31593901/30071781-52b3df92-9225-11e7-96f2-fc12ce68bbc0.jpg" width="338">
+<img src="https://user-images.githubusercontent.com/31593901/30071781-52b3df92-9225-11e7-96f2-fc12ce68bbc0.jpg" width="538">
