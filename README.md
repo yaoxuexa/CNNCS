@@ -26,7 +26,7 @@ For training the whole CNNCS framework on your own data, the major procedures ar
 2. Run CNNCS_Encode_trainset.m to generate training exmples list from downloaded dataset and encode the ground-truth cell coordinates to label vectors.
 
 3. cd to the home of Mxnet, generate the required .bin file from your training data list and label vectors by command:
-./bin/im2rec /path-to-training-data-list.txt /local /path-of-bin-file-saved-to label_width= quality=100
+./bin/im2rec /path-to-training-data-list.txt /local /path-of-bin-file-saved-to label_width=3090 quality=100
 
 4. Start training the neural network based regressor by calling the "Train_NN_regressor.py":
 python /path-to-"Train_NN_regressor.py" --network resnet-28-small --data-dir /path-to-bin-file --gpus 0,1 --batch-size 40 --lr 0.01 --lr-factor 0.1 --lr-factor-epoch 10 --model-prefix /path-of-model-saved-to --num-epochs 30 2>&1 | tee /path-to-log.txt
