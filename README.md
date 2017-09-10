@@ -6,7 +6,7 @@ Cell detection/localization from microscopy images is a significant task in medi
 
 <img src="https://user-images.githubusercontent.com/31593901/30071781-52b3df92-9225-11e7-96f2-fc12ce68bbc0.jpg" width="350">
 
-# Setup
+# Setup requirement
 
 Download the <a href="http://amida13.isi.uu.nl/">AMIDA-13</a> dataset.
 
@@ -17,7 +17,7 @@ See the instructions <a href="https://mxnet.incubator.apache.org/get_started/ubu
 
 # Usage:
 
-To evaluate the proposed CNNCS method, You can just clone this repo and run the demo "CNNCS_test.m", which calls our trianed CNN-based regression model and completes the decoding, sparse recovery and other related processings.
+To evaluate the proposed CNNCS method, you can clone this repo and run the demo "CNNCS_test.m", which calls our trianed CNN-based regression model and completes the decoding, sparse recovery and other related processings.
 
 For training the whole CNNCS framework on your own data, the major procedures are as follows:
 
