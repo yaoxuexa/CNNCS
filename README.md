@@ -6,7 +6,7 @@ Cell detection/localization from microscopy images is a significant task in medi
 
 <img src="https://user-images.githubusercontent.com/31593901/30071781-52b3df92-9225-11e7-96f2-fc12ce68bbc0.jpg" width="350" align="center">
 
-# Setup requirement
+# Setup requirements
 
 Download the <a href="http://amida13.isi.uu.nl/">AMIDA-13</a> dataset.
 
