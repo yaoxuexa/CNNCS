@@ -17,7 +17,7 @@ See the instructions <a href="https://mxnet.incubator.apache.org/get_started/ubu
 
 # Usage:
 
-To evaluate the proposed CNNCS method, you can clone this repo and run the demo "CNNCS_test.m", which calls our trianed CNN-based regression model and completes the decoding, sparse recovery and other related processings.
+To evaluate the proposed CNNCS method, you can clone this repo and run the demo "CNNCS_test.m", which uses our trained CNN-based regression model and completes the decoding, sparse recovery and other related processings.
 
 For training the whole CNNCS framework on your own data, the major procedures are as follows:
 
