@@ -15,7 +15,7 @@ Download the sparsity-regularized minimization solver MATLAB toolbox: <a href="h
 Install the deep learning library: <a href="https://github.com/apache/incubator-mxnet">Mxnet</a>.
 See the instructions <a href="https://mxnet.incubator.apache.org/get_started/ubuntu_setup.html">here</a> for a step-by-step guide for installation on Ubuntu.
 
-# Usage:
+# Usage
 
 To run the proposed CNNCS method, you can clone this repo and run the demo code "CNNCS_test.m", which uses our pre-trained CNN-based regression model and calls relavant functions to complete the decoding, sparse recovery and other related processings.
 
