@@ -15,12 +15,12 @@ load('OA-dictionary-Regular-30-200.mat');
 load('Sensing-matrix.mat');
 
 for patient_count=1:1:34
-	if patient_count<10
+    if patient_count<10
         patient_count=['0',num2str(patient_count)];
     else
         patient_count=num2str(patient_count);
-	end
-        
+    end
+    
     struct=dir([root_path,'mitoses-test-image-data/',patient_count,'/*.tif']);
     image_num=size(struct,1);
     for image_count=1:1:image_num
@@ -30,9 +30,9 @@ for patient_count=1:1:34
             image_count=num2str(image_count);
         end
         
-%         if ~exist([root_path,'mitoses_ground_truth/',num2str(patient_count),'/',image_count,'.csv'])
-%             continue
-%         end
+        %         if ~exist([root_path,'mitoses_ground_truth/',num2str(patient_count),'/',image_count,'.csv'])
+        %             continue
+        %         end
         %disp([root_path,'mitoses_ground_truth/',num2str(patient_count),'/',image_count,'.csv']);
         
         %read image
@@ -43,10 +43,10 @@ for patient_count=1:1:34
         for m=offset+1:patch_shift:rows-patch_size+1,
             for n=offset+1:patch_shift:cols-patch_size+1,
                 patch = image(m:m+patch_size-1,n:n+patch_size-1,:);%RGB patch
-%                 plot([n; n+patch_size; n+patch_size; n; n], [m; m; m+patch_size; m+patch_size; m],'g');
-
+                %                 plot([n; n+patch_size; n+patch_size; n; n], [m; m; m+patch_size; m+patch_size; m],'g');
+                
                 [rec_center_y,rec_center_x]=Decode_recovery(patch,LineParams,G);
-                                
+                
                 % Visualize detection result on each patch
                 imshow(patch),hold on;
                 plot(rec_center_y, rec_center_x,'y+');%Prediction
