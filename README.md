@@ -6,7 +6,7 @@ Cell detection/localization from microscopy images is a significant task in medi
 
 <img src="https://user-images.githubusercontent.com/31593901/30071781-52b3df92-9225-11e7-96f2-fc12ce68bbc0.jpg" width="350" align="center">
 
-# Dependences
+# Setup
 
 Download the <a href="http://amida13.isi.uu.nl/">AMIDA-13</a> dataset.
 
@@ -17,13 +17,13 @@ See the instructions <a href="https://mxnet.incubator.apache.org/get_started/ubu
 
 # Usage:
 
-To evaluate the proposed CNNCS method, you can clone this repo and run the demo "CNNCS_test.m", which uses our trained CNN-based regression model and completes the decoding, sparse recovery and other related processings.
+To run the proposed CNNCS method, you can clone this repo and run the demo code "CNNCS_test.m", which uses our pre-trained CNN-based regression model and calls relavant functions to complete the decoding, sparse recovery and other related processings.
 
 For training the whole CNNCS framework on your own data, the major procedures are as follows:
 
 1. Run Create_OA.m to create observation axes based on which cell coordinates are encoded. 
 
-2. Run CNNCS_Encode_trainset.m to generate training exmples list from downloaded dataset and encode the ground-truth cell coordinates to label vectors.
+2. Run CNNCS_Encode_trainset.m to generate training exmples list from downloaded dataset and encode the ground-truth cell coordinates to label vectors. You can also perform data augmentation using this .m file to supplement your training set, if necessary.
 
 3. cd to the home of Mxnet, generate the required .bin file from your training data list and label vectors by command:
 ./bin/im2rec /path-to-training-data-list.txt /local /path-of-bin-file-saved-to label_width=3090 quality=100
