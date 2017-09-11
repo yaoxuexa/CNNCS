@@ -39,40 +39,21 @@ for patient_count=1:1:34
         image=imread([root_path,'mitoses-test-image-data/',patient_count,'/',image_count,'.tif']);%Whole image
         [rows,cols,~]=size(image);
         
-        % Read ground-truth label of testing data
-        cor_Matrix = csvread([root_path,'mitoses-test-ground-truth/',patient_count,'/',image_count,'.csv']);
-        mitos_num=size(cor_Matrix,1);
-        MatData=zeros(rows,cols);
-        row=cor_Matrix(:,1);
-        col=cor_Matrix(:,2);
-        for i=1:1:mitos_num
-            MatData(row(i),col(i))=1;
-        end
-        
         %% Partition images to patches
         for m=offset+1:patch_shift:rows-patch_size+1,
             for n=offset+1:patch_shift:cols-patch_size+1,
-                blkMat = MatData(m:m+patch_size-1,n:n+patch_size-1);%Label
                 patch = image(m:m+patch_size-1,n:n+patch_size-1,:);%RGB patch
 %                 plot([n; n+patch_size; n+patch_size; n; n], [m; m; m+patch_size; m+patch_size; m],'g');
-                [x,y]=find(blkMat==1);%True coordinates in patch
-                
-                if sum(sum(blkMat))==0
-                    continue
-                end
-                
+
                 [rec_center_y,rec_center_x]=Decode_recovery(patch,LineParams,G);
-                
-                % Visualize a patch's result
+                                
+                % Visualize detection result on each patch
                 imshow(patch),hold on;
-                plot(y,x,'y+');%Ground-truth
-                plot(rec_center_y, rec_center_x,'r+');%Prediction
+                plot(rec_center_y, rec_center_x,'y+');%Prediction
                 hold off,axis image;
                 
             end
         end
-        
-
         
     end
 end
