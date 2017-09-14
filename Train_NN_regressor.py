@@ -7,7 +7,7 @@ import train_model
 parser = argparse.ArgumentParser(description='train an image classifer on cifar10')
 parser.add_argument('--network', type=str, default='resnet-28-small',
                     help = 'the cnn to use')
-parser.add_argument('--data-dir', type=str, default='nuclei/',
+parser.add_argument('--data-dir', type=str, default='amida13/',
                     help='the input data directory')
 parser.add_argument('--gpus', type=str, default='0',
                     help='the gpus will be used, e.g "0,1,2,3"')
@@ -45,11 +45,11 @@ def _download(data_dir):
 
 # network
 import importlib
-net = importlib.import_module('symbol_' + args.network).get_symbol(2000)#should be the same with label width
+net = importlib.import_module('symbol_' + args.network).get_symbol(3090)#should be the same with label width
 
 # data
 def get_iterator(args, kv):
-    data_shape = (3, 224, 224)
+    data_shape = (3, 200, 200)
     #if '://' not in args.data_dir:
     #    _download(args.data_dir)
 
@@ -63,7 +63,7 @@ def get_iterator(args, kv):
         num_parts   = kv.num_workers,
         part_index  = kv.rank,
 	path_imglist="/Path-to-training-list.txt",
-	label_width=2000)
+	label_width=3090)
 
     val = mx.io.ImageRecordIter(
         path_imgrec = args.data_dir + "Validation.bin",
@@ -75,7 +75,7 @@ def get_iterator(args, kv):
         num_parts   = kv.num_workers,
         part_index  = kv.rank,
 	path_imglist="/Path-to-val-list.txt",
-	label_width=2000)
+	label_width=3090)
 
     return (train, val)
 
